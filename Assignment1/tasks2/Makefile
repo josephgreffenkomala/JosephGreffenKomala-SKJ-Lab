@@ -1,26 +1,13 @@
-# Variables
-CXX := g++
-CXXFLAGS := -o
-TARGET := tasks2
-SRC := tasks2.cpp
 
-# Targets
-all: $(TARGET)
-	./$(TARGET)
+all: tasks2 
 
-$(TARGET): $(SRC)
-	$(CXX) $(SRC) $(CXXFLAGS) $(TARGET)
+tasks1: tasks2.cpp 
+	g++ tasks2.cpp -o tasks1
 
-.PHONY: clean
+run : tasks2
+	./tasks2
 
-clean:
-	$(RM) $(TARGET) $(TARGET).exe
-
-#
-#all: tasks1 
-#	./tasks1 
-#
-#tasks1: tasks1.cpp 
-#	g++ tasks1.cpp -o tasks1
-#
-#clean: rm tasks1.exe
+dump: tasks2
+	objdump -d tasks2.exe > tasks2.asm
+clean: 
+	del tasks2.asm tasks2.exe
