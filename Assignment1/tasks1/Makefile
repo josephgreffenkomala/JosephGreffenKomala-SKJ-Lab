@@ -10,4 +10,4 @@ run : tasks1
 dump: tasks1
 	objdump -d tasks1.exe > tasks1.asm
 clean: 
-	del tasks1.asm 
+	del tasks1.asm tasks1.exe
