@@ -17,7 +17,7 @@ printf("My parent id is %d\n", getppid());
 else {
 printf("I am parent process: %d\n", getpid());
 printf("My child id is %d\n", p);
-wait(NULL);
+
 sleep(15);
 wait(NULL);
 }
